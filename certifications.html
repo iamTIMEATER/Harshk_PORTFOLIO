@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Certifications</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="scripts.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Certifications</h1>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    <nav class="nav-menu">
+      <span class="close-btn" onclick="closeMenu()">✖</span>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="certifications.html" class="active">Certifications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section>
+    <div class="container">
+      <h2 class="gradient-text">My Certifications</h2>
+      
+      <!-- All certificates float side-by-side within the container -->
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 30px;">
+        <!-- Certificate 1 -->
+
+        <div class="certificate-card">
+            <h3>Fundamentals of Digital Marketing</h3>
+            <img src="certificates/cert1.jpg" alt="Certificate 2" />
+            <div class="download-links">
+              <a href="certificates/cert1.pdf" download>Download PDF</a>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <h3>Cisco Certificate (Coming Soon)</h3>
+            <div class="download-links">
+              <span class="disabled-btn">Not yet uploaded</span>
+            </div>
+          </div>
+
+        <!-- Certificate 2 -->
+        
+        <div class="certificate-card">
+            <h3>Nasscome Certificate (Coming Soon)</h3>
+            <div class="download-links">
+              <span class="disabled-btn">Not yet uploaded</span>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

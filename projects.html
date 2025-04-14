@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="scripts.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Projects</h1>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    <nav class="nav-menu">
+      <span class="close-btn" onclick="closeMenu()">✖</span>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="certifications.html" class="active">Certifications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section>
+    <h2 style="text-align: center; color: #fff;">My Projects</h2>
+    <div class="container">
+
+      <!-- Project 1 -->
+      <div class="project container2">
+        <h2 class="gradient-text">LPG Gas Detector</h2>
+        <p>
+          LPG Gas Detector: A safety-focused project using the MQ6 sensor to detect gas leaks and trigger alarms, preventing potential hazards efficiently.
+        </p>
+        <p><strong>Images:</strong> Coming up</p>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project container2">
+        <h2 class="gradient-text">Pop the Bubble</h2>
+        <p>
+          A fun and colorful bubble-popping game made using HTML, CSS, and JavaScript. Try to pop as many bubbles as you can in 30 seconds!
+        </p>
+        <a href="Project/Pop/GAME.html" target="_blank" class="project-btn">Play Game</a>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project container2">
+        <h2 class="gradient-text">Infinity Side Scroller</h2>
+        <p>
+          A fast-paced infinite side-scrolling game made with Python and Pygame. Here's a quick gameplay demo:
+        </p>
+        <video controls width="100%" style="border-radius: 12px; box-shadow: 0 0 10px rgba(0,255,255,0.3);">
+          <source src="Project/infinity_runner/Pygames.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+    </div>
+  </section>
+</body>
+</html>

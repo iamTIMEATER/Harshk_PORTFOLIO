@@ -1,0 +1,298 @@
+/* General Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at top left, #1a1a1a, #0d0d0d);
+    overflow-x: hidden;
+    color: #fff;
+}
+
+/* Static Noise Layer */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #000;
+    opacity: 0.03;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Header */
+header {
+    background-color: rgba(51, 51, 51, 0.8);
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+}
+
+h1 {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.8em;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1001;
+}
+
+.hamburger:hover {
+    animation: pop 0.3s ease-in-out forwards;
+}
+
+@keyframes pop {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+}
+
+/* Nav Menu */
+.nav-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: rgba(68, 68, 68, 0.9);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    z-index: 9999;
+}
+
+.nav-menu.show-menu {
+    transform: translateX(0);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    transition: 0.3s;
+    z-index: 10001;
+}
+
+.close-btn:hover {
+    color: red;
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu ul li {
+    padding: 15px;
+    text-align: center;
+}
+
+.nav-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    transition: background 0.3s;
+}
+
+.nav-menu ul li a:hover {
+    background-color: #555;
+}
+
+/* Section Layout */
+section {
+    padding: 20px;
+}
+
+/* Container with Aura */
+.container {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    overflow: visible;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    border-radius: 25px;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.25), transparent 60%);
+    box-shadow:
+        0 0 25px 10px rgba(0, 255, 255, 0.2),
+        0 0 60px 30px rgba(0, 255, 255, 0.1),
+        0 0 100px 40px rgba(0, 255, 255, 0.05);
+    animation: auraPulse 6s infinite ease-in-out;
+    z-index: -1;
+}
+
+@keyframes auraPulse {
+    0% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.6; }
+}
+
+/* Profile Image */
+.profile-pic {
+    max-width: 200px;
+    float: right;
+    margin-left: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient Text */
+.gradient-text {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    color: cyan;
+}
+
+/* Social Buttons */
+.socials {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    padding: 12px 24px;
+    border: 2px solid rgba(0, 255, 255, 0.6);
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    background: #111;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.25);
+}
+
+.social-btn:hover {
+    background-color: rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6),
+                0 0 40px rgba(0, 255, 255, 0.4),
+                0 0 60px rgba(0, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .profile-pic {
+        float: none;
+        display: block;
+        margin: 20px auto;
+    }
+}
+
+/* Reusable Buttons */
+.project-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: rgba(0, 255, 255, 0.25);
+    border: none;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.project-btn:hover {
+    background: rgba(0, 255, 255, 0.5);
+}
+
+/* Keep these classes as requested */
+.certifications {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    background-color: #111;
+}
+
+.certificate-card {
+    background: #222;
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 700px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    text-align: center;
+    color: white;
+}
+
+.certificate-card img {
+    width: 75%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.download-links a {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 16px;
+    background-color: rgba(0, 255, 255, 0.1);
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    color: #0ff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.download-links a:hover {
+    background-color: rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.disabled-btn {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 16px;
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.4);
+    color: red;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: not-allowed;
+    text-decoration: none;
+}

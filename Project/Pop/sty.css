@@ -1,0 +1,78 @@
+/* Background and Base Styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1f1f2e; /* soft dark theme */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    color: #ffffff;
+  }
+  
+  /* Game Area */
+  #game-area {
+    position: relative;
+    height: 100vh;
+    text-align: center;
+    padding-top: 30px;
+  }
+  
+  .gradient-text {
+    font-size: 2.2rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #00ffe7, #5effb5, #00d9ff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 4s linear infinite;
+    margin: 10px 0;
+  }
+  
+  @keyframes shine {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+  }
+  
+  #score, #timer {
+    font-size: 1.5rem;
+    margin: 10px;
+    color: #00ffe7;
+  }
+  
+  /* Bubble Style */
+  .bubble {
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Bubble float animation */
+  @keyframes floatUp {
+    to {
+      bottom: 100%;
+      opacity: 0;
+    }
+  }
+  
+  /* Start Button */
+  button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    background: #00ffe7;
+    border: none;
+    border-radius: 8px;
+    color: #1f1f2e;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 255, 231, 0.5);
+    transition: transform 0.2s ease;
+  }
+  
+  button:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+  
